@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+let p=fs.readFileSync('work/export-pages.js','utf8');
+p=p.replace(/^function checkout\(.*\r?\n/gm,'').replace(/^function placeOrder\(.*\r?\n/gm,'');
+p=fs.readFileSync('work/payment-page.js','utf8')+'\n'+p;
+p=p.replace("switch(activeView){","switch(activeView){case 'checkout':h=paymentPage();break;");
+p=p.replace('MY TEST ORDERS','MY ORDERS').replace('Local demo orders. No payments or shipments.','Orders saved on this device. Contact the seller to confirm your order.');
+p=p.replace('Test order — no payment collected','${E(o.paymentMethod===\'upi\'?\'UPI · Awaiting manual verification\':o.paymentMethod===\'cod\'?\'Cash on Delivery · Due on delivery\':\'Test order\')}');
+p=p.replace('<strong>${INR(o.total)}</strong><div class="steps">','<strong>${INR(o.total)}</strong>${o.upiReference?`<p>UPI reference: ${E(o.upiReference)} (unverified)</p>`:\'\'}<div class="steps">');
+p=p.replace('No payment collected. No shipment.</p><h3>','${E(o.paymentMethod===\'upi\'?\'UPI payment unverified.\':\'Payment due on delivery.\')} Order saved locally; seller confirmation required.</p><h3>');
+p=p.replace('Add a sample figure, open the cart, and choose Demo Checkout. Use sample details.','Add a figure, open the cart, and choose Checkout. Select Cash on Delivery or UPI. Orders stay on this device; UPI payments require manual verification.');
+fs.writeFileSync('work/export-pages.js',p);
+let c=fs.readFileSync('work/export-core.js','utf8').replace('DEMO CHECKOUT →','CHECKOUT →').replace('Local demo. No payment, email, or shipment.','Choose Cash on Delivery or UPI at checkout. Orders are saved on this device.');
+fs.writeFileSync('work/export-core.js',c);
+let l=fs.readFileSync('work/export-layout.txt','utf8');
+l=l.replace('</style>',`.payment-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,1fr);gap:25px;align-items:start}.payment-box{padding:25px;border:1px solid #583169;background:linear-gradient(145deg,#1a0b25,#0b0611);border-radius:12px;margin-bottom:22px}.payment-box h2{margin-top:0}.payment-option{display:flex;gap:14px;align-items:center;padding:20px;border:1px solid #694084;border-radius:9px;margin:15px 0;cursor:pointer}.payment-option:has(input:checked){border-color:#ca70ff;background:#46166155}.payment-option input{accent-color:#b544ed;width:18px;height:18px}.payment-option span{flex:1}.payment-option small{display:block;line-height:1.6;color:#bba7c9;margin-top:8px}.payment-option b{color:#cb93ef}.upi-address{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#08040d;padding:18px;border-radius:8px}.payment-reference{display:block;margin:20px 0}.payment-reference input{display:block;width:100%;padding:14px;margin-top:10px;border:1px solid #68427c;border-radius:6px;background:#160b20;color:white}.payment-summary{position:sticky;top:110px}.payment-summary .cart-row{grid-template-columns:45px 1fr auto;font-size:13px}.payment-summary .cart-row img{width:45px;height:65px}.payment-summary .cart-row h3{font-size:15px}@media(max-width:1000px){.payment-layout{grid-template-columns:1fr}.payment-summary{position:static}}\n</style>`);
+fs.writeFileSync('work/export-layout.txt',l);

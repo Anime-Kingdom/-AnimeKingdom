@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+let s=fs.readFileSync('work/test-html-export.mjs','utf8').split("assert.equal(run('state.products.length')")[0];
+s+=`\nlet requests=[];context.AbortSignal=AbortSignal;
+context.fetch=async(url,options)=>{requests.push({url,options});return {ok:false,status:403,json:async()=>({code:'42501'})}};
+context.mockForm={dataset:{},reportValidity:()=>true,querySelectorAll:()=>[],name:'Integration Test',email:'test@example.com',phone:'9000000000',address:'Test address',city:'Test city',state:'Test state',pin:'110001',payment:'cod'};
+context.FormData=class{constructor(f){this.f=f}[Symbol.iterator](){return Object.entries(this.f).filter(([k,v])=>typeof v==='string')[Symbol.iterator]()}};
+run("add('gojo',1)");
+await run('placeOrder({preventDefault(){},target:mockForm})');
+assert.equal(run('state.orders.length'),0);assert.equal(run('state.cart.gojo'),1);
+context.fetch=async(url,options)=>{requests.push({url,options});return {ok:true,status:201}};
+await run('placeOrder({preventDefault(){},target:mockForm})');
+assert.equal(run('state.orders.length'),1);assert.equal(run('Object.keys(state.cart).length'),0);assert.equal(run('state.orders[0].cloudSaved'),true);
+const row=JSON.parse(requests.at(-1).options.body);assert.equal(row.customer_name,'Integration Test');assert.equal(row.form_data.address.pin,'110001');assert.equal(row.form_data.items[0].id,'gojo');assert.equal(row.status,'pending');assert.equal(row.payment_method,'cod');
+assert.equal(JSON.parse(requests[0].options.body).id,row.id);
+assert.equal(requests.at(-1).options.headers.apikey.startsWith('sb_publishable_'),true);
+console.log('PASS: rejected submissions retain cart; successful submission saves receipt, full details, pending status, and stable retry ID.');\n`;
+fs.writeFileSync('work/supabase/test-connection.mjs',s);
