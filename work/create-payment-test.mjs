@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+let t=fs.readFileSync('work/test-html-export.mjs','utf8');
+t+=`\nrun("add('gojo',1);go('checkout')");
+assert.ok(get('page-view').innerHTML.includes('7081201212@fam'));
+assert.ok(get('page-view').innerHTML.includes('am=2499.00'));
+run("selectPayment('upi')");assert.equal(get('upi-panel').hidden,false);
+run("selectPayment('cod')");assert.equal(get('upi-panel').hidden,true);
+run("placeOrder({preventDefault(){},target:{payment:'upi',upiReference:'sample-reference',name:'Test'}})");
+assert.equal(run('state.orders[0].paymentStatus'),'Awaiting manual verification');
+assert.equal(run('state.orders[0].upiId'),'7081201212@fam');
+assert.equal(run('state.orders[0].upiReference'),'sample-reference');
+run("add('gojo',1);placeOrder({preventDefault(){},target:{payment:'cod',name:'Test'}})");
+assert.equal(run('state.orders[0].paymentStatus'),'Due on delivery');
+assert.equal(run('state.orders[0].upiReference'),'');
+console.log('PASS: checkout rendering, UPI recipient/amount, payment selection, unverified UPI and unpaid COD order states.');\n`;
+fs.writeFileSync('work/test-payment.mjs',t);
