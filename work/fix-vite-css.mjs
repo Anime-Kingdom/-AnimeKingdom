@@ -1,2 +1,0 @@
-import fs from 'node:fs';
-const p='work/convert-vite.mjs';let s=fs.readFileSync(p,'utf8');s=s.replace("let css=[];let output=html.replace(/<style[^>]*>([\\s\\S]*?)<\\/style>/g,(_,s)=>{css.push(s);return ''});\noutput=output.replace(/<script>([\\s\\S]*?)<\\/script>/,()=>'<script src=\"./storefront/app.js\" defer></script>');", "let css=[];let output=html.replace(/<script>([\\s\\S]*?)<\\/script>/,()=>'<script src=\"./storefront/app.js\" defer></script>');\noutput=output.replace(/<style[^>]*>([\\s\\S]*?)<\\/style>/g,(_,s)=>{css.push(s);return ''});");fs.writeFileSync(p,s);

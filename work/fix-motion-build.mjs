@@ -1,4 +1,0 @@
-import fs from 'node:fs';
-const p='work/build-html-export.mjs';let s=fs.readFileSync(p,'utf8');s=s.replace("fs.readFileSync('work/export-head.txt','utf8').replace('</style>','\\n'+fs.readFileSync('work/export-motion.css','utf8')+'\\n</style>')+fs.readFileSync('work/export-layout.txt','utf8')", "fs.readFileSync('work/export-head.txt','utf8')+fs.readFileSync('work/export-layout.txt','utf8').replace('</style>','\\n'+fs.readFileSync('work/export-motion.css','utf8')+'\\n</style>')");fs.writeFileSync(p,s);
-// Keep enhancement optional if browser APIs are unavailable (including non-browser checkout tests).
-const m='work/export-motion.js';s=fs.readFileSync(m,'utf8').replace('(function kingdomMotion(){','(function kingdomMotion(){\n  if(typeof matchMedia!==\'function\'||typeof IntersectionObserver!==\'function\')return;');fs.writeFileSync(m,s);

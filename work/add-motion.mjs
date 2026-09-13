@@ -1,2 +1,0 @@
-import fs from 'node:fs';
-for(const p of ['work/build-html-export.mjs','work/convert-vite.mjs']){let s=fs.readFileSync(p,'utf8').replace("'work/export-supabase.js']","'work/export-supabase.js','work/export-motion.js']");if(p.includes('build-html'))s=s.replace("fs.readFileSync('work/export-head.txt','utf8')+", "fs.readFileSync('work/export-head.txt','utf8').replace('</style>','\\n'+fs.readFileSync('work/export-motion.css','utf8')+'\\n</style>')+");fs.writeFileSync(p,s)}
