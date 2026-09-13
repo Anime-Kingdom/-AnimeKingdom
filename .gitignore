@@ -68,3 +68,4 @@ node_modules/
 *.keystore
 local.properties
 .gradle/
+!/work/export-motion.css

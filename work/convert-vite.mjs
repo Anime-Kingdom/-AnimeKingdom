@@ -7,6 +7,6 @@ let css=[];let output=html.replace(/<script>([\s\S]*?)<\/script>/,()=>'<script s
 output=output.replace(/<style[^>]*>([\s\S]*?)<\/style>/g,(_,s)=>{css.push(s);return ''});
 output=output.replace('</head>','<link rel="stylesheet" href="/src/style.css">\n</head>');
 fs.writeFileSync('index.html',output);fs.writeFileSync('src/style.css',css.join('\n'));
-const js=['work/export-core.js','work/export-pages.js','work/export-editor.js','work/export-supabase.js'].map(p=>fs.readFileSync(p,'utf8')).join('\n');
+const js=['work/export-core.js','work/export-pages.js','work/export-editor.js','work/export-supabase.js','work/export-motion.js'].map(p=>fs.readFileSync(p,'utf8')).join('\n');
 fs.writeFileSync('public/storefront/app.js','const ASSETS='+JSON.stringify(assets)+';\n'+js);
 console.log('Updated Vite storefront from HTML source.');
