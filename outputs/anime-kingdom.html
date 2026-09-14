@@ -1578,9 +1578,10 @@ if(state.catalogRevision!==catalogRevision){
 if(state.gojoPhotoRevision!=='studio-photo-1'){const p=state.products.find(p=>p.id==='gojo');if(p){p.image='gojo';p.images=['gojo'];}state.gojoPhotoRevision='studio-photo-1';}
 if(!state.products.some(p=>p.id==='pikachu'))state.products.push(structuredClone(defaults.find(p=>p.id==='pikachu')));
 // Retire the former sample product from saved storefront state.
-state.products=state.products.filter(p=>p.id!=='custom');
-delete state.cart.custom;
-state.wishlist=state.wishlist.filter(id=>id!=='custom');
+const retiredProductIds=new Set(['custom',...state.products.filter(p=>String(p.name||'').trim().toLowerCase()==='custom character concept').map(p=>p.id)]);
+state.products=state.products.filter(p=>!retiredProductIds.has(p.id));
+for(const id of retiredProductIds)delete state.cart[id];
+state.wishlist=state.wishlist.filter(id=>!retiredProductIds.has(id));
 
 let activeView='home',q='',anime='all',category='all',sort='featured',mode='all',onlyStock=false,max='',coupon='',currentProduct=null,detailQuantity=1,modelUrl,previousFocus,timer;
 const $=id=>document.getElementById(id);const photo=p=>ASSETS[p.image]||(/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(p.image||'')?p.image:ASSETS.logo);
