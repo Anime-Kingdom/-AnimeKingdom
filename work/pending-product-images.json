@@ -1,0 +1,58 @@
+{
+  "note": "Awaiting accessible paths for the images attached to browser comments. Do not publish new products without their matching images.",
+  "products": [
+    {
+      "id": "gojo",
+      "name": "Gojo Satoru Figure",
+      "price": 999,
+      "height": 23,
+      "imageCount": 2,
+      "replaceOld": true
+    },
+    {
+      "id": "spider",
+      "name": "Spider-Man Display Figure",
+      "price": 1199,
+      "imageCount": 2,
+      "replaceOld": true
+    },
+    {
+      "id": "ganesha",
+      "name": "Ganesha Statue",
+      "price": 1199,
+      "imageCount": 1
+    },
+    {
+      "id": "pikachu",
+      "name": "Pikachu Figure",
+      "price": 1199,
+      "imageCount": 4
+    },
+    {
+      "id": "book-stand",
+      "name": "Honeycomb Book Stand",
+      "price": 499,
+      "imageCount": 2
+    },
+    {
+      "id": "krishna",
+      "name": "Krishna Statue",
+      "price": 999,
+      "imageCount": 2
+    },
+    {
+      "id": "heart-keychain-pack",
+      "name": "Heart Keychains — Pack of 20",
+      "price": 999,
+      "packSize": 20,
+      "imageCount": 2
+    },
+    {
+      "id": "dinosaur-keychain-pack",
+      "name": "Dinosaur Keychains — Pack of 20",
+      "price": 999,
+      "packSize": 20,
+      "imageCount": 1
+    }
+  ]
+}
