@@ -29,7 +29,7 @@ async function placeOrder(e){
   if(method==='upi'&&!/^[0-9]{12}$/.test(reference))throw Error('Enter the 12-digit UTR from your UPI app.');
   const proof=method==='upi'?await paymentProof(values.upiScreenshot):'';
   delete values.payment;delete values.upiReference;delete values.upiScreenshot;
-  const order={address:values,paymentMethod:method,paymentStatus:method==='upi'?'Awaiting manual verification':'Due on delivery',upiId:method==='upi'?UPI_ID:'',upiReference:reference,paymentScreenshot:proof,items:list.map(({p,qty})=>({id:p.id,name:p.name,price:p.price,qty})),...totals(),status:'Order Placed',source:'website'};
+  const order={address:values,paymentMethod:method,paymentStatus:method==='upi'?'Awaiting manual verification':'Due on delivery',upiId:method==='upi'?UPI_ID:'',upiReference:reference,paymentScreenshot:proof,items:list.map(({p,qty})=>orderItem(p,qty)),...totals(),status:'Order Placed',source:'website'};
   const id=await sendSubmission(form,'checkout',order,values,{method,utr:reference});
   order.id=id;order.date=new Date().toISOString();order.cloudSaved=true;
   if(!state.orders.some(o=>o.id===id))state.orders.unshift(order);

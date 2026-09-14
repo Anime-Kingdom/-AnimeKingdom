@@ -21,3 +21,12 @@ const row=JSON.parse(requests.at(-1).options.body);assert.equal(row.customer_nam
 assert.equal(JSON.parse(requests[0].options.body).id,row.id);
 assert.equal(requests.at(-1).options.headers.apikey.startsWith('sb_publishable_'),true);
 console.log('PASS: rejected submissions retain cart; successful submission saves receipt, full details, pending status, and stable retry ID.');
+// Pack quantities must remain whole packs, with piece counts saved alongside them.
+run("state.products.push({id:'test-pack',name:'Test pack',price:999,stock:10,packSize:20,image:'logo'});state.cart={};add('test-pack',1)");
+assert.equal(run('totals().subtotal'),999);
+assert.equal(run("quantityLabel(state.products.find(p=>p.id==='test-pack'),1)"),'1 pack · 20 pieces');
+run("add('test-pack',0.5)");assert.equal(run("state.cart['test-pack']"),1);
+run("add('test-pack',1)");assert.equal(run('totals().subtotal'),1998);
+const pack=JSON.parse(run("JSON.stringify(orderItem(state.products.find(p=>p.id==='test-pack'),2))"));
+assert.equal(pack.qty,2);assert.equal(pack.pieces,40);assert.equal(pack.packSize,20);
+console.log('PASS: 20-piece packs cost 999 per pack; fractional packs rejected; receipt metadata preserves 40 pieces for two packs.');
