@@ -6,8 +6,9 @@
       "name": "Gojo Satoru Figure",
       "price": 999,
       "height": 23,
-      "imageCount": 2,
-      "replaceOld": true
+      "imageCount": 1,
+      "replaceOld": false,
+      "note": "Main replacement image installed. Only the optional second gallery photo still needs an accessible path."
     },
     {
       "id": "spider",
@@ -21,12 +22,6 @@
       "name": "Ganesha Statue",
       "price": 1199,
       "imageCount": 1
-    },
-    {
-      "id": "pikachu",
-      "name": "Pikachu Figure",
-      "price": 1199,
-      "imageCount": 4
     },
     {
       "id": "book-stand",
