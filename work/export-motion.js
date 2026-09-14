@@ -13,7 +13,7 @@
   }
   const progress=document.createElement('div');progress.className='kingdom-scroll-progress';progress.setAttribute('aria-hidden','true');document.body.appendChild(progress);
   const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('is-revealed');observer.unobserve(entry.target)}},{threshold:0.08});
-  function enhance(){document.querySelectorAll('.glass-card,.product-card,#about-section,#drops-section,.section-header,.ak-category,.ak-custom,.ak-value-grid article,.ak-community,.ak-final').forEach((el,i)=>{if(el.dataset.motionReady)return;el.dataset.motionReady='yes';el.style.setProperty('--reveal-delay',Math.min(i%4,3)*70+'ms');el.classList.add('kingdom-reveal');observer.observe(el)});}
+  function enhance(){document.querySelectorAll('.ak2-category,.ak2-custom,.ak2-living,.ak2-benefits article,.ak2-heading,.glass-card,.product-card,#about-section,#drops-section,.section-header,.ak-category,.ak-custom,.ak-value-grid article,.ak-community,.ak-final').forEach((el,i)=>{if(el.dataset.motionReady)return;el.dataset.motionReady='yes';el.style.setProperty('--reveal-delay',Math.min(i%4,3)*70+'ms');el.classList.add('kingdom-reveal');observer.observe(el)});}
   enhance();
   const mutation=new MutationObserver(enhance);for(const id of ['page-view','featured-grid']){const root=document.getElementById(id);if(root)mutation.observe(root,{childList:true,subtree:true})}
   let frame=0;
