@@ -40,3 +40,7 @@ Run `npm test` for the mocked submission checks.
 - `outputs/`: standalone HTML and payment QR image.
 
 `node_modules` and `dist` are generated locally and are not committed. Old React/Next pages were removed when the repository was replaced with the current vanilla Vite storefront.
+
+## Detailed documentation
+
+See [Website guide](WEBSITE-GUIDE.md) for the catalog, features, order handling, source map, deployment steps and pending assets.
