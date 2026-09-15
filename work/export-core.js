@@ -1,6 +1,7 @@
 const KEY='anime-kingdom-html-demo-v1',E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),INR=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR'}).format(n);
 const defaults=[['gojo','Gojo Satoru Figure','Jujutsu Kaisen',999,12],['spider','Spider-Man Display Figure','Superheroes',1199,8],['hulk','Red Hulk Collectible','Superheroes',1299,5]].map(([id,name,anime,price,stock],i)=>({id,name,anime,price,stock,original:0,image:id,category:i===3?'Custom 3D Figures':i===0?'Anime Figures':'Collectibles',new:i===1||i===2,featured:true,material:'Not specified',height:i===0?23:i===1?20:0,description:'Character collectible for your display shelf. Contact Anime Kingdom for availability and product details.'}));
 defaults.push({"id":"pikachu","name":"Pikachu Figure","anime":"Pokémon","price":1299,"original":0,"stock":1,"availabilityUnconfirmed":true,"image":"pikachu1","images":["pikachu1","pikachu2","pikachu3","pikachu4"],"category":"Anime Figures","new":true,"featured":true,"material":"Not specified","height":23,"description":"A cheerful Pikachu display figure with a waving pose and signature lightning-bolt tail. Height: 23 cm. Browse all four product photos. Availability is confirmed by the seller."});
+defaults.push({"id":"ganesha","name":"Ganesha Statue","anime":"Spiritual Decor","price":1199,"original":0,"stock":1,"availabilityUnconfirmed":true,"image":"ganesha","images":["ganesha"],"category":"Home & Desk","new":true,"featured":true,"material":"Not specified","height":23,"description":"An orange Ganesha statue for your home or display space. Height: 23 cm. Availability is confirmed by the seller."});
 let state={products:structuredClone(defaults),cart:{},wishlist:[],orders:[],requests:[],profile:{},dropDate:'',policies:{}};try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Array.isArray(s.products))state={...state,...s}}catch{}
 // Apply confirmed catalog changes without removing customer carts or orders.
 const catalogRevision='2026-09-14-prices';
@@ -11,6 +12,7 @@ if(state.catalogRevision!==catalogRevision){
 // Replace the old Gojo photograph in previously saved catalogs too.
 if(state.gojoPhotoRevision!=='studio-photo-1'){const p=state.products.find(p=>p.id==='gojo');if(p){p.image='gojo';p.images=['gojo'];}state.gojoPhotoRevision='studio-photo-1';}
 if(!state.products.some(p=>p.id==='pikachu'))state.products.push(structuredClone(defaults.find(p=>p.id==='pikachu')));
+if(!state.products.some(p=>p.id==='ganesha'))state.products.push(structuredClone(defaults.find(p=>p.id==='ganesha')));
 // Retire the former sample product from saved storefront state.
 const retiredProductIds=new Set(['custom',...state.products.filter(p=>String(p.name||'').trim().toLowerCase()==='custom character concept').map(p=>p.id)]);
 state.products=state.products.filter(p=>!retiredProductIds.has(p.id));
