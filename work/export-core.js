@@ -24,6 +24,7 @@ if(!state.products.some(p=>p.id==='heart'))state.products.push(structuredClone(d
 if(state.heartStockRevision!==1){Object.assign(state.products.find(p=>p.id==='heart'),{stock:400,minQty:20});state.heartStockRevision=1;}
 if(state.heartPackRevision!==1){const p=state.products.find(p=>p.id==='heart');Object.assign(p,{price:999,stock:20,packSize:20,description:'Red lattice heart keychain. Pack of 20 pieces for ₹999. Minimum order: 1 pack.'});delete p.minQty;if(state.cart.heart)state.cart.heart=Math.min(20,Math.ceil(state.cart.heart/20));state.heartPackRevision=1;}
 if(state.hulkHeightRevision!==1){const p=state.products.find(p=>p.id==='hulk');if(p)p.height=23;state.hulkHeightRevision=1;}
+if(state.heartPhotoDescriptionRevision!==1){const p=state.products.find(p=>p.id==='heart');if(p)Object.assign(p,{"image":"heart1","images":["heart1","heart2"],"description":"Red lattice heart keychain that can also be filled with toffees and chocolates for gifting. Pack of 20 pieces for ₹999. Minimum order: 1 pack."});state.heartPhotoDescriptionRevision=1;}
 // Retire the former sample product from saved storefront state.
 const retiredProductIds=new Set(['custom',...state.products.filter(p=>String(p.name||'').trim().toLowerCase()==='custom character concept').map(p=>p.id)]);
 state.products=state.products.filter(p=>!retiredProductIds.has(p.id));
