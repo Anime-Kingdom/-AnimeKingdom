@@ -22,7 +22,7 @@ async function placeOrder(e){
  e.preventDefault();const form=e.target;
  await busyForm(form,async()=>{
   const list=lines();if(!list.length)throw Error('Your cart is empty.');
-  if(list.some(({p,qty})=>qty>p.stock))throw Error('Update your cart: availability has changed.');
+  if(list.some(({p,qty})=>!Number.isInteger(qty)||qty<(p.minQty||1)||qty>p.stock))throw Error('Update your cart: availability has changed.');
   const values=Object.fromEntries(new FormData(form));const method=values.payment||'cod';
   if(!['cod','upi'].includes(method))throw Error('Choose a payment method.');
   const reference=method==='upi'?String(values.upiReference||'').trim():'';
