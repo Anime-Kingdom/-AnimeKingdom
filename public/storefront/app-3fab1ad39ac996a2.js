@@ -131,7 +131,8 @@ async function placeOrder(e){
   const id=await sendSubmission(form,'checkout',order,values,{method,utr:reference});
   order.id=id;order.date=new Date().toISOString();order.cloudSaved=true;
   if(!state.orders.some(o=>o.id===id))state.orders.unshift(order);
-  state.cart={};coupon='';save();badge();go('orders');toast('Order received by Anime Kingdom. Payment and delivery await seller confirmation.');
+  state.cart={};coupon='';save();badge();go('orders');
+  modal('Thank you for your order!',`<p>Your order has been received by Anime Kingdom.</p><p><strong>Order number: ${E(order.id)}</strong></p><p>${method==='upi'?'Your UPI payment is awaiting verification.':'Payment is due on delivery.'} Delivery details will be confirmed by the seller.</p><button class="btn-primary" onclick="closeModal()">VIEW MY ORDER</button>`);
  });
 }
 async function contactDraft(e){e.preventDefault();await busyForm(e.target,async()=>{const data=Object.fromEntries(new FormData(e.target));await sendSubmission(e.target,'contact',data,data);e.target.reset();toast('Message received by Anime Kingdom.');})}

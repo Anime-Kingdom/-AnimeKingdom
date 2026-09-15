@@ -14,9 +14,11 @@ context.FormData=class{constructor(f){this.f=f}[Symbol.iterator](){return Object
 run("add('gojo',1)");
 await run('placeOrder({preventDefault(){},target:mockForm})');
 assert.equal(run('state.orders.length'),0);assert.equal(run('state.cart.gojo'),1);
+assert.notEqual(get('modal-heading').textContent,'Thank you for your order!');
 context.fetch=async(url,options)=>{requests.push({url,options});return {ok:true,status:201}};
 await run('placeOrder({preventDefault(){},target:mockForm})');
 assert.equal(run('state.orders.length'),1);assert.equal(run('Object.keys(state.cart).length'),0);assert.equal(run('state.orders[0].cloudSaved'),true);
+assert.equal(get('modal-heading').textContent,'Thank you for your order!');assert.equal(get('modal').open,true);assert.ok(get('modal-body').innerHTML.includes(run('state.orders[0].id')));
 const row=JSON.parse(requests.at(-1).options.body);assert.equal(row.customer_name,'Integration Test');assert.equal(row.form_data.address.pin,'110001');assert.equal(row.form_data.items[0].id,'gojo');assert.equal(row.status,'pending');assert.equal(row.payment_method,'cod');
 assert.equal(JSON.parse(requests[0].options.body).id,row.id);
 assert.equal(requests.at(-1).options.headers.apikey.startsWith('sb_publishable_'),true);
