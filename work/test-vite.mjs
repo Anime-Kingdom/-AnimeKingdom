@@ -12,6 +12,7 @@ context.fetch=async(url,options)=>{requests.push({url,options});return {ok:false
 context.mockForm={dataset:{},reportValidity:()=>true,querySelectorAll:()=>[],name:'Integration Test',email:'test@example.com',phone:'9000000000',address:'Test address',city:'Test city',state:'Test state',pin:'110001',payment:'cod'};
 context.FormData=class{constructor(f){this.f=f}[Symbol.iterator](){return Object.entries(this.f).filter(([k,v])=>typeof v==='string')[Symbol.iterator]()}};
 run("add('gojo',1)");
+assert.equal(run('totals().shipping'),0);assert.equal(run('totals().total'),999);
 await run('placeOrder({preventDefault(){},target:mockForm})');
 assert.equal(run('state.orders.length'),0);assert.equal(run('state.cart.gojo'),1);
 assert.notEqual(get('modal-heading').textContent,'Thank you for your order!');
