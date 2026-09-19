@@ -39,3 +39,10 @@ assert.equal(run("orderItem(state.products.find(p=>p.id==='heart'),1).pieces"),2
 run("add('heart',19)");assert.equal(run('state.cart.heart'),20);
 run("add('heart',1)");assert.equal(run('state.cart.heart'),20);
 console.log('PASS: heart pack contains 20 pieces for 999; stock capped at 20 packs.');
+run("state.products.push({id:'coupon-test',price:798,stock:10});state.cart={'coupon-test':1};coupon='RAGGOFAN50OFF'");
+assert.equal(run('totals().discount'),0);
+run("state.products.find(p=>p.id==='coupon-test').price=799");assert.equal(run('totals().total'),749);
+run("coupon='RAGGOFAN100OFF';state.products.find(p=>p.id==='coupon-test').price=1498");assert.equal(run('totals().discount'),0);
+run("state.products.find(p=>p.id==='coupon-test').price=1499");assert.equal(run('totals().total'),1399);
+run("coupon='KINGDOM10'");assert.equal(run('totals().discount'),0);
+console.log('PASS: coupon thresholds, fixed discounts and retired code rejection.');
