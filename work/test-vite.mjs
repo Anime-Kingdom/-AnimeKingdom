@@ -34,11 +34,11 @@ const pack=JSON.parse(run("JSON.stringify(orderItem(state.products.find(p=>p.id=
 assert.equal(pack.qty,2);assert.equal(pack.pieces,40);assert.equal(pack.packSize,20);
 console.log('PASS: 20-piece packs cost 999 per pack; fractional packs rejected; receipt metadata preserves 40 pieces for two packs.');
 run("state.cart={};coupon='';add('heart')");
-assert.equal(run('state.cart.heart'),1);assert.equal(run('totals().total'),999);
+assert.equal(run('state.cart.heart'),1);assert.equal(run('totals().total'),1199);
 assert.equal(run("orderItem(state.products.find(p=>p.id==='heart'),1).pieces"),20);
 run("add('heart',19)");assert.equal(run('state.cart.heart'),20);
 run("add('heart',1)");assert.equal(run('state.cart.heart'),20);
-console.log('PASS: heart pack contains 20 pieces for 999; stock capped at 20 packs.');
+console.log('PASS: heart pack contains 20 pieces for 1199; stock capped at 20 packs.');
 run("state.products.push({id:'coupon-test',price:798,stock:10});state.cart={'coupon-test':1};coupon='RAGGOFAN50OFF'");
 assert.equal(run('totals().discount'),0);
 run("state.products.find(p=>p.id==='coupon-test').price=799");assert.equal(run('totals().total'),749);
