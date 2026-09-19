@@ -21,7 +21,7 @@
   addEventListener('scroll',scrollMotion,{passive:true});scrollMotion();
   let activeCard=null,tiltFrame=0;
   document.addEventListener('pointermove',event=>{
-    if(reduced.matches||event.pointerType==='touch')return;
+    if(reduced.matches||event.pointerType==='touch'||!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
     const card=event.target.closest('.product-card,.glass-card');
     if(activeCard&&activeCard!==card){activeCard.style.removeProperty('--tilt-x');activeCard.style.removeProperty('--tilt-y')}
     activeCard=card;if(!card||tiltFrame)return;
