@@ -1552,3 +1552,6 @@ body{background:#030305}.main-wrapper{max-width:1600px;margin-inline:auto!import
 .contact-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:850px}.contact-links p{padding:22px;border:1px solid #583169;border-radius:10px;background:#160c22;margin:0}.contact-links strong{color:#eee}.contact-links a{color:#cf9fff;overflow-wrap:anywhere;text-underline-offset:4px}.contact-links a:hover{color:white}@media(max-width:600px){.contact-links{grid-template-columns:1fr}}
 
 .product-card-clickable .product-share{position:relative;z-index:4;width:100%;margin-top:8px;min-height:40px;padding:10px;font-size:12px}.detail-buttons{flex-wrap:wrap}
+
+/* Discourage image long-press saving and dragging without blocking page controls. */
+img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
