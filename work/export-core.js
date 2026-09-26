@@ -104,3 +104,18 @@ function zoomPhoto(){modal(currentProduct.name,`<img class="zoom-photo" src="${$
 function preventImageSave(event){if(event.target.closest?.('img'))event.preventDefault()}
 document.addEventListener('contextmenu',preventImageSave);
 document.addEventListener('dragstart',preventImageSave);
+
+function setupCollectionAutoScroll(){
+const track=$('collection-track'),section=track?.closest('.collection-carousel'),toggle=$('collection-auto-toggle');if(!track||!toggle||track.dataset.autoReady)return;track.dataset.autoReady='true';
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches,hover=false,dragging=false,last=0,direction=1,position=track.scrollLeft,holdUntil=0;
+const label=()=>{toggle.textContent=paused?'▶ Play scrolling':'Ⅱ Pause scrolling';toggle.setAttribute('aria-pressed',String(paused))};label();
+toggle.addEventListener('click',()=>{paused=!paused;label()});
+reduced.addEventListener('change',e=>{paused=e.matches;label()});
+section.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hover=true});section.addEventListener('pointerleave',()=>hover=false);
+section.addEventListener('pointerdown',()=>{dragging=true;holdUntil=performance.now()+4000});window.addEventListener('pointerup',()=>dragging=false);window.addEventListener('pointercancel',()=>dragging=false);
+section.addEventListener('wheel',()=>holdUntil=performance.now()+4000,{passive:true});section.addEventListener('keydown',()=>holdUntil=performance.now()+4000);section.addEventListener('click',()=>holdUntil=performance.now()+4000);
+function frame(now){const dt=Math.min(now-last,50);last=now;const rect=track.getBoundingClientRect(),max=track.scrollWidth-track.clientWidth;
+if(paused||hover||dragging||now<holdUntil||document.hidden||section.contains(document.activeElement)||rect.bottom<0||rect.top>innerHeight||rect.width===0||max<=0){position=track.scrollLeft;requestAnimationFrame(frame);return}
+position+=direction*dt*.025;if(position>=max){position=max;direction=-1}else if(position<=0){position=0;direction=1}track.scrollLeft=position;requestAnimationFrame(frame)}requestAnimationFrame(frame);
+}
+setupCollectionAutoScroll();
