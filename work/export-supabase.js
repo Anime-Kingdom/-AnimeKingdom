@@ -29,8 +29,10 @@ async function placeOrder(e){
   if(method==='upi'&&!/^[0-9]{12}$/.test(reference))throw Error('Enter the 12-digit UTR from your UPI app.');
   const proof=method==='upi'?await paymentProof(values.upiScreenshot):'';
   delete values.payment;delete values.upiReference;delete values.upiScreenshot;
-  const order={address:values,paymentMethod:method,paymentStatus:method==='upi'?'Awaiting manual verification':'Due on delivery',upiId:method==='upi'?UPI_ID:'',upiReference:reference,paymentScreenshot:proof,items:list.map(({p,qty})=>orderItem(p,qty)),...totals(),status:'Order Placed',source:'website'};
+  if(coupon&&couponUsed(coupon))throw Error('This coupon has already been used on this device. Remove it from your cart to continue.');
+  const order={couponCode:coupon,address:values,paymentMethod:method,paymentStatus:method==='upi'?'Awaiting manual verification':'Due on delivery',upiId:method==='upi'?UPI_ID:'',upiReference:reference,paymentScreenshot:proof,items:list.map(({p,qty})=>orderItem(p,qty)),...totals(),status:'Order Placed',source:'website'};
   const id=await sendSubmission(form,'checkout',order,values,{method,utr:reference});
+  if(order.discount>0)markCouponUsed(order.couponCode);
   order.id=id;order.date=new Date().toISOString();order.cloudSaved=true;
   if(!state.orders.some(o=>o.id===id))state.orders.unshift(order);
   state.cart={};coupon='';save();badge();go('orders');
