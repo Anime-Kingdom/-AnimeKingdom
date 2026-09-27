@@ -1563,3 +1563,5 @@ img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;-webkit-u
 .collection-circle[data-collection="MARVEL"] img{object-fit:contain;object-position:center;background:#192027}
 
 .collection-circle[data-collection="Pokémon"] img{object-fit:contain;object-position:center;background:#fff}
+
+.coupon-feedback{margin:8px 0 16px;font-size:.95rem;font-weight:600}.coupon-success{color:#4ade80}.coupon-error{color:#f87171}
