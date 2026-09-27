@@ -112,13 +112,13 @@ document.addEventListener('dragstart',preventImageSave);
 
 function setupCollectionAutoScroll(){
 const track=$('collection-track'),section=track?.closest('.collection-carousel');if(!track||track.dataset.autoReady)return;track.dataset.autoReady='true';
-const reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches,hover=false,dragging=false,last=0,position=track.scrollLeft,holdUntil=0;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches,hover=false,dragging=false,last=0,position=track.scrollLeft,holdUntil=0,endReached=false;
 reduced.addEventListener('change',e=>{paused=e.matches});
 section.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hover=true});section.addEventListener('pointerleave',()=>hover=false);
 section.addEventListener('pointerdown',()=>{dragging=true;holdUntil=performance.now()+4000});window.addEventListener('pointerup',()=>dragging=false);window.addEventListener('pointercancel',()=>dragging=false);
 section.addEventListener('wheel',()=>holdUntil=performance.now()+4000,{passive:true});section.addEventListener('keydown',()=>holdUntil=performance.now()+4000);section.addEventListener('click',()=>holdUntil=performance.now()+4000);
 function frame(now){const dt=Math.min(now-last,50);last=now;const rect=track.getBoundingClientRect(),max=track.scrollWidth-track.clientWidth;
 if(paused||hover||dragging||now<holdUntil||document.hidden||section.contains(document.activeElement)||rect.bottom<0||rect.top>innerHeight||rect.width===0||max<=0){position=track.scrollLeft;requestAnimationFrame(frame);return}
-position+=dt*.025;if(position>=max){position=0;holdUntil=now+1200}track.scrollLeft=position;requestAnimationFrame(frame)}requestAnimationFrame(frame);
+if(endReached&&position<max-1)endReached=false;if(endReached){position=0;endReached=false;holdUntil=now+1200}else{position+=dt*.025;if(position>=max){position=max;endReached=true;holdUntil=now+2000}}track.scrollLeft=position;requestAnimationFrame(frame)}requestAnimationFrame(frame);
 }
 setupCollectionAutoScroll();
