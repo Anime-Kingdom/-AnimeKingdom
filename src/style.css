@@ -1561,3 +1561,5 @@ img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none;-webkit-u
 .collection-track{scroll-snap-type:none}.collection-auto-toggle{display:block;margin:14px 0 0 auto;padding:8px 12px;border:1px solid #583169;border-radius:6px;background:#1b1027;color:#e8ddef;font:inherit;font-size:12px;cursor:pointer}.collection-auto-toggle:focus-visible{outline:2px solid #c783ff;outline-offset:3px}
 
 .collection-circle[data-collection="MARVEL"] img{object-fit:contain;object-position:center;background:#192027}
+
+.collection-circle[data-collection="Pokémon"] img{object-fit:contain;object-position:center;background:#fff}
