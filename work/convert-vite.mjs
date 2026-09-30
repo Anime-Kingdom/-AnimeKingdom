@@ -26,5 +26,5 @@ const version=createHash('sha256').update(app).digest('hex').slice(0,16);
 const filename='app-'+version+'.js';
 for(const file of fs.readdirSync('public/storefront'))if(/^app-[a-f0-9]{16}\.js$/.test(file)&&file!==filename)fs.unlinkSync('public/storefront/'+file);
 fs.writeFileSync('public/storefront/'+filename,app);
-fs.writeFileSync('index.html',output.replace('./storefront/app.js','./storefront/'+filename));
+fs.writeFileSync('index.html',output.replace('./storefront/app.js','./storefront/'+filename).replace('</body>','<script src="./storefront/live-catalog.js" defer></script></body>'));
 console.log('Updated Vite storefront with versioned script: '+filename);
