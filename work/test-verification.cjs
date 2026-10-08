@@ -3,7 +3,7 @@ const source=fs.readFileSync('public/verification.js','utf8');
 async function check(code,row,ok=true){
  const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:''});return nodes.get(id);};
  let calls=0;
- vm.runInNewContext(source,{document:{getElementById:get},location:{search:'?code='+code},URLSearchParams,AbortSignal,Date,window:{print(){}},fetch:async()=>{calls++;return {ok,json:async()=>row};}});
+ vm.runInNewContext(source,{document:{getElementById:get},location:{search:'?code='+code},URLSearchParams,AbortController,setTimeout,clearTimeout,Date,window:{print(){}},fetch:async()=>{calls++;return {ok,json:async()=>row};}});
  await new Promise(resolve=>setImmediate(resolve));return {get,calls};
 }
 (async()=>{
