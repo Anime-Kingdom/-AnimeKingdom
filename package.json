@@ -12,7 +12,7 @@
     "start": "vite preview",
     "install:ci": "node scripts/install-ci.mjs",
     "export": "node work/build-html-export.mjs && node work/convert-vite.mjs",
-    "test": "node work/test-vite.mjs"
+    "test": "node work/test-vite.mjs && node work/test-verification.cjs"
   },
   "devDependencies": {
     "vite": "8.3.1",
