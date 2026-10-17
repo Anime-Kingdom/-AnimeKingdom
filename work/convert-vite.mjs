@@ -24,7 +24,15 @@ fs.writeFileSync('public/storefront/app.js','const ASSETS='+JSON.stringify(urls)
 const app=fs.readFileSync('public/storefront/app.js');
 const version=createHash('sha256').update(app).digest('hex').slice(0,16);
 const filename='app-'+version+'.js';
-for(const file of fs.readdirSync('public/storefront'))if(/^app-[a-f0-9]{16}\.js$/.test(file)&&file!==filename)fs.unlinkSync('public/storefront/'+file);
 fs.writeFileSync('public/storefront/'+filename,app);
 fs.writeFileSync('index.html',output.replace('./storefront/app.js','./storefront/'+filename).replace('</body>','<script src="./storefront/live-catalog.js" defer></script><script src="./product-photos.js?v=1" defer></script></body>'));
 console.log('Updated Vite storefront with versioned script: '+filename);
+// Preserve crawlable SEO entry points and social metadata when exporting.
+if(fs.existsSync('public/seo-pages.json')){
+ const pages=JSON.parse(fs.readFileSync('public/seo-pages.json','utf8'));
+ const c=pages.home,esc=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+ let entry=fs.readFileSync('index.html','utf8').replace(/<title>[\s\S]*?<\/title>/,'<title>'+esc(c.title)+'</title>').replace(/<meta name="description"[^>]*>/,'<meta name="description" content="'+esc(c.description)+'">');
+ const tags=Object.entries({'og:type':'website','og:site_name':'Anime Kingdom','og:title':c.title,'og:description':c.description,'og:url':'https://animekingdom.in/','og:image':c.image}).map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(c.image)+'">';
+ entry=entry.replace('</head>',tags+'</head>').replace('</body>','<script src="/seo-navigation.js?v=1" defer></script></body>').replace(/href="#([a-z]+)"/g,(all,v)=>pages[v]?'href="'+pages[v].path+'"':all);
+ fs.writeFileSync('index.html',entry);
+}
