@@ -1,0 +1,9 @@
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+.collection-carousel,#ak2-living{scroll-margin-top:24px}
+.ak-scroll-cue{display:flex;align-items:center;gap:15px;margin-top:26px;padding:8px 0;border:0;background:none;color:#c9b9d7;font:500 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.ak-scroll-cue span{display:grid;place-items:center;width:32px;height:32px;border:1px solid #79578e;border-radius:50%;font-size:18px;animation:ak-scroll-hint 2s ease-in-out 3}
+.ak-scroll-cue:hover{color:#fff}.ak-scroll-cue:focus-visible{outline:2px solid #d7a2ff;outline-offset:5px}
+.kingdom-reveal{transition:opacity .85s ease var(--reveal-delay,0ms),translate .85s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms),transform .24s ease,box-shadow .3s ease}
+@keyframes ak-scroll-hint{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(max-width:650px){html{scroll-padding-top:80px}.ak-scroll-cue{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ak-scroll-cue span{animation:none}.kingdom-reveal{transition:none!important;translate:none!important;opacity:1!important}}
