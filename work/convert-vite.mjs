@@ -16,7 +16,7 @@ for(const [name,data] of Object.entries(assets)){
 let css=[];let output=html.replace(/<script>([\s\S]*?)<\/script>/,()=>'<script src="./storefront/app.js" defer></script>');
 output=output.replace(/<style[^>]*>([\s\S]*?)<\/style>/g,(_,s)=>{css.push(s);return ''});
 output=output.replace(/<img([^>]*?)data-asset="([^"]+)"([^>]*?)>/g,(tag,before,key,after)=>'<img'+before+'data-asset="'+key+'" src="'+urls[key]+'" decoding="async"'+after+'>');
-output=output.replace('</head>','<link rel="stylesheet" href="/src/style.css">\n<link rel="stylesheet" href="./scroll-motion.css?v=20261017-1"><link rel="stylesheet" href="./scroll-depth-3d.css?v=20261017-3d1"><link rel="stylesheet" href="./kingdom-cinematic.css?v=20261017-2"><link rel="stylesheet" href="./kingdom-experience.css?v=3">\n</head>');
+output=output.replace('</head>','<link rel="stylesheet" href="/src/style.css"><link rel="stylesheet" href="./kingdom-professional.css?v=2">\n\n</head>');
 fs.writeFileSync('index.html',output);fs.writeFileSync('src/style.css',css.join('\n'));
 const js=['work/export-core.js','work/export-pages.js','work/export-editor.js','work/export-supabase.js','work/export-motion.js'].map(p=>fs.readFileSync(p,'utf8')).join('\n');
 fs.writeFileSync('public/storefront/app.js','const ASSETS='+JSON.stringify(urls)+';\n'+js);
@@ -26,5 +26,5 @@ const version=createHash('sha256').update(app).digest('hex').slice(0,16);
 const filename='app-'+version+'.js';
 for(const file of fs.readdirSync('public/storefront'))if(/^app-[a-f0-9]{16}\.js$/.test(file)&&file!==filename)fs.unlinkSync('public/storefront/'+file);
 fs.writeFileSync('public/storefront/'+filename,app);
-fs.writeFileSync('index.html',output.replace('./storefront/app.js','./storefront/'+filename).replace('</body>','<script src="./storefront/live-catalog.js" defer></script><script src="./scroll-motion.js?v=20261017-1" defer></script><script src="./scroll-depth-3d.js?v=20261017-3d1" defer></script><script src="./kingdom-cinematic.js?v=20261017-2" defer></script><script src="./kingdom-experience.js?v=3" defer></script></body>'));
+fs.writeFileSync('index.html',output.replace('./storefront/app.js','./storefront/'+filename).replace('</body>','<script src="./storefront/live-catalog.js" defer></script><script src="./kingdom-professional.js?v=1" defer></script></body>'));
 console.log('Updated Vite storefront with versioned script: '+filename);
