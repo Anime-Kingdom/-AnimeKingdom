@@ -1,0 +1,9 @@
+/* Preserve the original purple/black theme; keep real product photos visible. */
+.product-thumb-wrap{overflow:hidden}
+.product-thumb{display:block!important;visibility:visible!important;opacity:1!important;width:100%!important;height:100%!important;object-fit:contain!important;padding:0!important;filter:none!important;transform:none!important}
+.product-details-hit{background:transparent!important}
+.product-card .product-thumb-wrap{min-height:240px}
+@media(max-width:600px){.product-card .product-thumb-wrap{min-height:190px}}
+
+/* Product cards must never wait for the old scroll reveal to become visible. */
+.product-card,.product-card.kingdom-reveal{opacity:1!important;visibility:visible!important;translate:none!important;transform:none!important;transition:none!important}
