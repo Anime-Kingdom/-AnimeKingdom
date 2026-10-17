@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
-
+Disallow: /admin/
+Disallow: /certificate/
+Disallow: /checkout.html
+Disallow: /orders.html
+Disallow: /account.html
+Disallow: /customer-account.html
+Disallow: /wishlist.html
 Sitemap: https://animekingdom.in/sitemap.xml

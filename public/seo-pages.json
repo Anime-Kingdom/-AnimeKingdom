@@ -1,0 +1,241 @@
+{
+  "home": {
+    "title": "Anime Figures & Collectibles in India | Anime Kingdom",
+    "description": "Discover anime figures and character collectibles at Anime Kingdom. Browse Gojo, Goku, Luffy and more, with product photos, prices and online checkout.",
+    "path": "/",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "shop": {
+    "title": "Shop Anime Figures & Collectibles | Anime Kingdom",
+    "description": "Explore Anime Kingdom figures, collectibles, accessories and desk decor. Compare product photos and prices, choose your favourites and shop online.",
+    "path": "/shop.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "collections": {
+    "title": "Anime & Character Collections | Anime Kingdom",
+    "description": "Find your favourite character collections at Anime Kingdom. Explore Jujutsu Kaisen, Dragon Ball, One Piece, Pokémon and more collectibles.",
+    "path": "/collections.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "custom": {
+    "title": "Custom Figure Requests | Anime Kingdom",
+    "description": "Bring your character idea to Anime Kingdom. Learn about custom figure requests and contact our team to discuss your design and requirements.",
+    "path": "/custom.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "drops": {
+    "title": "New Figure Drops | Anime Kingdom",
+    "description": "Discover the latest additions to Anime Kingdom. Browse new character figures, collectibles and accessories with photos and product details.",
+    "path": "/drops.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "about": {
+    "title": "About Anime Kingdom | Anime Kingdom",
+    "description": "Meet Anime Kingdom, a store for anime figures, character collectibles and custom ideas. Discover our passion for fandom and display-worthy products.",
+    "path": "/about.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "contact": {
+    "title": "Contact Anime Kingdom | Anime Kingdom",
+    "description": "Get in touch with Anime Kingdom for product questions, availability, order support and custom figure enquiries. Find our contact and social links.",
+    "path": "/contact.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "faq": {
+    "title": "Frequently Asked Questions | Anime Kingdom",
+    "description": "Find answers about shopping at Anime Kingdom, including figures, orders, payments and delivery. Contact our team if you need more help.",
+    "path": "/faq.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "shipping": {
+    "title": "Shipping & Returns | Anime Kingdom",
+    "description": "Read Anime Kingdom shipping, delivery, return and replacement information, including unboxing video requirements and how to report a product issue.",
+    "path": "/shipping.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "privacy": {
+    "title": "Privacy Policy | Anime Kingdom",
+    "description": "Read how Anime Kingdom handles the information you provide while browsing, contacting us and placing orders. Learn about customer data and privacy.",
+    "path": "/privacy.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "terms": {
+    "title": "Terms & Conditions | Anime Kingdom",
+    "description": "Read the terms and conditions for using Anime Kingdom and shopping for figures and collectibles, including orders, payments and customer responsibilities.",
+    "path": "/terms.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "kingdom": {
+    "title": "Explore the Kingdom | Anime Kingdom",
+    "description": "Explore Anime Kingdom collections, custom figures and community links. Find your next character collectible and discover more from our store.",
+    "path": "/kingdom.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "workshop": {
+    "title": "Figure Workshop | Anime Kingdom",
+    "description": "Explore the Anime Kingdom workshop and learn about our figure process. Discover character ideas and contact us about your custom collectible.",
+    "path": "/workshop.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": false
+  },
+  "wishlist": {
+    "title": "Your Wishlist | Anime Kingdom",
+    "description": "View the figures and collectibles saved in your Anime Kingdom wishlist on this browser. Explore your favourites and continue shopping.",
+    "path": "/wishlist.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": true
+  },
+  "orders": {
+    "title": "Your Orders | Anime Kingdom",
+    "description": "Review your Anime Kingdom order receipts saved on this device and find contact links for order support.",
+    "path": "/orders.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": true
+  },
+  "account": {
+    "title": "Your Customer Details | Anime Kingdom",
+    "description": "Manage the customer details used by Anime Kingdom on this browser and find links to support and shopping.",
+    "path": "/account.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": true
+  },
+  "checkout": {
+    "title": "Checkout | Anime Kingdom",
+    "description": "Complete your Anime Kingdom order, review your cart and provide delivery details securely through our checkout.",
+    "path": "/checkout.html",
+    "image": "https://animekingdom.in/share-preview.jpg",
+    "private": true
+  },
+  "product/abstractWoman": {
+    "title": "Abstract Woman Sculpture | Anime Kingdom",
+    "description": "An abstract woman sculpture with flowing hair, a fragmented silhouette and a round display base. A decorative piece for a desk or shelf. Browse all three product pho",
+    "path": "/product-abstractWoman.html",
+    "image": "https://www.animekingdom.in/storefront/abstractWoman1.webp"
+  },
+  "product/aizen": {
+    "title": "Aizen Action Figure | Anime Kingdom",
+    "description": "Aizen action figure in a black outfit with white shoulder details and an outstretched-arm pose on a round display base. Browse all six product photos.",
+    "path": "/product-aizen.html",
+    "image": "https://www.animekingdom.in/storefront/aizen1.webp"
+  },
+  "product/bookstand": {
+    "title": "Honeycomb Book Stand | Anime Kingdom",
+    "description": "A black book stand with a honeycomb design and front page holders for your reading space. Browse both product photos.",
+    "path": "/product-bookstand.html",
+    "image": "https://www.animekingdom.in/storefront/bookstand1-7ccc31b152aa.webp"
+  },
+  "product/dinosaur": {
+    "title": "Dinosaur Keychain | Anime Kingdom",
+    "description": "Dinosaur keychain with a segmented skeleton design. Pack of 20 pieces for ₹1,199. Minimum order: 1 pack. Choose Yellow, Red, Blue, Black, Silver or Purple for your p",
+    "path": "/product-dinosaur.html",
+    "image": "https://www.animekingdom.in/storefront/dinosaur3.webp"
+  },
+  "product/dragon": {
+    "title": "Crystal Dragon Collectible | Anime Kingdom",
+    "description": "Dragon collectible with a coiled body, detailed head and crystal-like scales. ₹599 for each colour: Blue, Red, Black, Silver or Purple. Gold shown in the group photo",
+    "path": "/product-dragon.html",
+    "image": "https://www.animekingdom.in/storefront/dragon2.webp"
+  },
+  "product/ganesha": {
+    "title": "Ganesha Statue | Anime Kingdom",
+    "description": "An orange Ganesha statue for your home or display space. Height: 23 cm.",
+    "path": "/product-ganesha.html",
+    "image": "https://www.animekingdom.in/storefront/ganesha-79298f7d8e71.webp"
+  },
+  "product/gojo": {
+    "title": "Gojo Satoru Figure | Anime Kingdom",
+    "description": "Character collectible for your display shelf. Contact Anime Kingdom for availability and product details.",
+    "path": "/product-gojo.html",
+    "image": "https://www.animekingdom.in/storefront/gojo-d70282f10927.webp"
+  },
+  "product/gojo-sitting": {
+    "title": "Satoru Gojo Sitting Figure | Anime Kingdom",
+    "description": "Satoru Gojo in a relaxed seated pose, with white hair, a black blindfold and black outfit. Display on a shelf or desk edge. Browse both product photos.",
+    "path": "/product-gojo-sitting.html",
+    "image": "https://www.animekingdom.in/storefront/gojoSitting1.webp"
+  },
+  "product/goku-ssj3": {
+    "title": "Super Saiyan 3 Goku Figure | Anime Kingdom",
+    "description": "Super Saiyan 3 Goku collectible figure with long golden hair, orange gi and blue accents. Product photos show the figure from two angles. Contact Anime Kingdom for d",
+    "path": "/product-goku-ssj3.html",
+    "image": "https://animekingdom.in/goku-ssj3-front.webp"
+  },
+  "product/heart": {
+    "title": "Heart Keychain | Anime Kingdom",
+    "description": "Red lattice heart keychain that can also be filled with toffees and chocolates for gifting. Pack of 20 pieces for ₹1,199. Minimum order: 1 pack.",
+    "path": "/product-heart.html",
+    "image": "https://www.animekingdom.in/storefront/heart1-9eb1ad144e83.webp"
+  },
+  "product/hulk": {
+    "title": "Red Hulk Collectible | Anime Kingdom",
+    "description": "Character collectible for your display shelf. Contact Anime Kingdom for availability and product details.",
+    "path": "/product-hulk.html",
+    "image": "https://www.animekingdom.in/storefront/hulk-89cf5c095413.webp"
+  },
+  "product/katana": {
+    "title": "Katana Collectible | Anime Kingdom",
+    "description": "Katana-style collectible with a curved design and textured handle. ₹599 for each colour: Blue, Red, Black, Silver or Purple. Gold shown in the group photos is not av",
+    "path": "/product-katana.html",
+    "image": "https://www.animekingdom.in/storefront/katana2.webp"
+  },
+  "product/krishna": {
+    "title": "Krishna Statue | Anime Kingdom",
+    "description": "A Krishna statue holding a flute, with a detailed crown and lotus base. Height: 20 cm. Browse both product photos.",
+    "path": "/product-krishna.html",
+    "image": "https://www.animekingdom.in/storefront/krishna1-18aedb2a1864.webp"
+  },
+  "product/luffy": {
+    "title": "Monkey D. Luffy Action Figure | Anime Kingdom",
+    "description": "Monkey D. Luffy action figure wearing his signature straw hat, red jacket, blue shorts and yellow sash. A colourful addition to a One Piece collection.",
+    "path": "/product-luffy.html",
+    "image": "https://www.animekingdom.in/storefront/luffy1.webp"
+  },
+  "product/pikachu": {
+    "title": "Pikachu Figure | Anime Kingdom",
+    "description": "A cheerful Pikachu display figure with a waving pose and signature lightning-bolt tail. Height: 23 cm. Browse all four product photos.",
+    "path": "/product-pikachu.html",
+    "image": "https://www.animekingdom.in/storefront/pikachu1-55344ec888a5.webp"
+  },
+  "product/seashell-box": {
+    "title": "Seashell Jewellery Holder | Anime Kingdom",
+    "description": "A white seashell-shaped jewellery holder with scalloped details, for organizing rings, bracelets and small accessories. Browse both product photos.",
+    "path": "/product-seashell-box.html",
+    "image": "https://www.animekingdom.in/storefront/seashellBox1.webp"
+  },
+  "product/shiva-figure": {
+    "title": "Shiva Collectible Figure | Anime Kingdom",
+    "description": "A Shiva collectible with a blue figure, flowing hair, bead details and a sculpted water-effect base. Height: 23 cm.",
+    "path": "/product-shiva-figure.html",
+    "image": "https://www.animekingdom.in/storefront/shivaFigure1.webp"
+  },
+  "product/spider": {
+    "title": "Spider-Man Display Figure | Anime Kingdom",
+    "description": "Character collectible for your display shelf. Contact Anime Kingdom for availability and product details.",
+    "path": "/product-spider.html",
+    "image": "https://www.animekingdom.in/storefront/spider-a5c8d3f7d02b.webp"
+  },
+  "product/spiral": {
+    "title": "Spiral Desk Toy | Anime Kingdom",
+    "description": "A geometric spiral desk toy with a layered star-shaped design. Available in Black, Blue, Red, Yellow and Brown. Photos show the design under different lighting.",
+    "path": "/product-spiral.html",
+    "image": "https://www.animekingdom.in/storefront/spiral-1.webp"
+  },
+  "product/venom-pikachu": {
+    "title": "Venom Pikachu | Anime Kingdom",
+    "description": "A Venom-inspired Pikachu collectible with a textured black design, white eyes, sharp teeth and a red tongue. Height: 23 cm. Browse both product photos.",
+    "path": "/product-venom-pikachu.html",
+    "image": "https://www.animekingdom.in/storefront/venomPikachu1.webp"
+  }
+}
