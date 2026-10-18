@@ -249,5 +249,11 @@
     "description": "Shop the Super Saiyan 4 Goku Figure at Anime Kingdom for ₹1,499. View the product photo and add this Dragon Ball collectible to your collection.",
     "path": "/product-goku-ssj4.html",
     "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/2369c856-31a0-4e4c-9701-b64fd2d55945.webp"
+  },
+  "product/product-93b9ea99-8a6b-4c36-8eb6-907beec51841": {
+    "title": "Vegeta Purple Hair Figure | Anime Kingdom",
+    "description": "Shop the Vegeta Purple Hair Figure at Anime Kingdom for ₹1,199. View the product photo and add this Dragon Ball collectible to your collection.",
+    "path": "/product-vegeta-purple.html",
+    "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/cdcbc5f2-7019-4048-9f63-87ef39cdf135.webp"
   }
 }
