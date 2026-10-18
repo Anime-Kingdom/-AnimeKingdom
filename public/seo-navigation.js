@@ -1,6 +1,6 @@
 /* Crawlable page URLs, per-view metadata and real internal links. */
 (async()=>{
- const pages=await fetch('/seo-pages.json').then(r=>{if(!r.ok)throw Error('Metadata unavailable');return r.json()}).catch(()=>null);if(!pages)return;
+ const pages=await fetch('/seo-pages.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Metadata unavailable');return r.json()}).catch(()=>null);if(!pages)return;
  const originalGo=go,originalDetails=details;
  const routeURL=v=>pages[v]?.path||'/404.html';
  const meta=(key,value,property=false)=>{let el=document.head.querySelector(`meta[${property?'property':'name'}="${key}"]`);if(!el){el=document.createElement('meta');el.setAttribute(property?'property':'name',key);document.head.append(el)}el.content=value};

@@ -237,5 +237,11 @@
     "description": "A Venom-inspired Pikachu collectible with a textured black design, white eyes, sharp teeth and a red tongue. Height: 23 cm. Browse both product photos.",
     "path": "/product-venom-pikachu.html",
     "image": "https://www.animekingdom.in/storefront/venomPikachu1.webp"
+  },
+  "product/vegeta-ssj4": {
+    "title": "Super Saiyan 4 Vegeta Figure | Anime Kingdom",
+    "description": "Shop the Super Saiyan 4 Vegeta Figure at Anime Kingdom for ₹1,199. Explore the product photo and add this Dragon Ball collectible to your collection.",
+    "path": "/product-vegeta-ssj4.html",
+    "image": "https://animekingdom.in/vegeta-ssj4-front.webp"
   }
 }
