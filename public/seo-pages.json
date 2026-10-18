@@ -261,5 +261,11 @@
     "description": "Shop the Vegeta Saiyan Armour Figure at Anime Kingdom for ₹1,199. View the product photo and add this Dragon Ball collectible to your collection.",
     "path": "/product-vegeta-armour.html",
     "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/f4e821e1-8b95-4b23-8ecf-926430273284.webp"
+  },
+  "product/product-a4b97330-8f6c-48c6-8754-7b5147395d8c": {
+    "title": "Super Saiyan Broly Figure | Anime Kingdom",
+    "description": "Shop the Super Saiyan Broly Figure at Anime Kingdom for ₹1,499. View the product photo and add this Dragon Ball collectible to your collection.",
+    "path": "/product-broly.html",
+    "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/87094e16-7da0-4b0e-84f4-e4a62798261e.webp"
   }
 }
