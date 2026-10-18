@@ -255,5 +255,11 @@
     "description": "Shop the Vegeta Purple Hair Figure at Anime Kingdom for ₹1,199. View the product photo and add this Dragon Ball collectible to your collection.",
     "path": "/product-vegeta-purple.html",
     "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/cdcbc5f2-7019-4048-9f63-87ef39cdf135.webp"
+  },
+  "product/product-97481f1f-1740-4e1e-b89e-8697299c54e7": {
+    "title": "Vegeta Saiyan Armour Figure | Anime Kingdom",
+    "description": "Shop the Vegeta Saiyan Armour Figure at Anime Kingdom for ₹1,199. View the product photo and add this Dragon Ball collectible to your collection.",
+    "path": "/product-vegeta-armour.html",
+    "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/f4e821e1-8b95-4b23-8ecf-926430273284.webp"
   }
 }
