@@ -186,7 +186,7 @@
   },
   "product/katana": {
     "title": "Katana Collectible | Anime Kingdom",
-    "description": "Shop the Katana Collectible at Anime Kingdom for ₹1,299 each. Explore the available colour options, product photos and collectible details.",
+    "description": "Shop the normal Katana Collectible at Anime Kingdom for ₹599 each. Explore the available colour options, product photos and collectible details.",
     "path": "/product-katana.html",
     "image": "https://www.animekingdom.in/storefront/katana2.webp"
   },
@@ -267,5 +267,11 @@
     "description": "Shop the Super Saiyan Broly Figure at Anime Kingdom for ₹1,499. View the product photo and add this Dragon Ball collectible to your collection.",
     "path": "/product-broly.html",
     "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/87094e16-7da0-4b0e-84f4-e4a62798261e.webp"
+  },
+  "product/product-fda957ef-9189-437e-9915-61cc3d6138fa": {
+    "title": "Demon Slayer Katana Collection | Anime Kingdom",
+    "description": "Shop Demon Slayer katana collectibles at Anime Kingdom for ₹1,299 per katana. Choose from the pictured designs and browse both collection photos.",
+    "path": "/product-demon-slayer-katana.html",
+    "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/7f2b959a-3730-4887-8140-1132617c7487.webp"
   }
 }
