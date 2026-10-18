@@ -243,5 +243,11 @@
     "description": "Shop the Super Saiyan 4 Vegeta Figure at Anime Kingdom for ₹1,199. Explore the product photo and add this Dragon Ball collectible to your collection.",
     "path": "/product-vegeta-ssj4.html",
     "image": "https://animekingdom.in/vegeta-ssj4-front.webp"
+  },
+  "product/product-eabcc267-02b6-4a57-8305-5c5ba32fc730": {
+    "title": "Super Saiyan 4 Goku Figure | Anime Kingdom",
+    "description": "Shop the Super Saiyan 4 Goku Figure at Anime Kingdom for ₹1,499. View the product photo and add this Dragon Ball collectible to your collection.",
+    "path": "/product-goku-ssj4.html",
+    "image": "https://iuftepknrbankwkfdbuc.supabase.co/storage/v1/object/public/ak-product-images/2369c856-31a0-4e4c-9701-b64fd2d55945.webp"
   }
 }
